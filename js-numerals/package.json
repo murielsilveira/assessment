@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Shows the english phrase of a given number",
   "main": "english-numbers.js",
+  "scripts": {
+    "test": "mocha *.test.js"
+  },
   "keywords": [
     "english-numbers",
     "numbers",
