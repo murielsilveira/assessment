@@ -41,16 +41,24 @@ function numberToPhrase(number) {
   if (isNotANumber || isFloat || isNegative)
     return 'Unknown number'
 
-  if (number <= 9)
-    return zeroToNine[number]
+  let phrase = ''
 
-  if (number <= 19)
-    return tenToNineteen[number]
+  if (number >= 100) {
+    const hundredth = Math.floor(number / 100)
+    phrase = zeroToNine[hundredth] + ' hundred'
+    number -= 100
+  }
+
+  if (number <= 19) {
+    if (phrase && number === 0)
+      return phrase
+    return phrase + (zeroToNine[number] || tenToNineteen[number])
+  }
 
   const tenth = Math.floor(number / 10)
   const tenthRest = number % 10
 
-  let phrase = tens[tenth]
+  phrase += tens[tenth]
   if (tenthRest > 0)
     phrase += '-' + zeroToNine[tenthRest]
 
