@@ -24,7 +24,9 @@ const zeroToNineteen = {
 function numberToPhrase(number) {
   if (typeof(number) !== 'number')
     return 'Unknown number'
-  return zeroToNineteen[number]
+  if (number < 20)
+    return zeroToNineteen[number]
+  return 'twenty'
 }
 
 module.exports = numberToPhrase

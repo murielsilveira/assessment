@@ -38,4 +38,8 @@ describe('number to phrase tests', function(){
     expect(numberToPhrase(18)).to.equal('eighteen')
     expect(numberToPhrase(19)).to.equal('nineteen')
   })
+
+  it('20 should be: twenty', function(){
+    expect(numberToPhrase(20)).to.equal('twenty')
+  })
 })
