@@ -42,4 +42,8 @@ describe('number to phrase tests', function(){
   it('20 should be: twenty', function(){
     expect(numberToPhrase(20)).to.equal('twenty')
   })
+
+  it('21 should be: twenty-one', function(){
+    expect(numberToPhrase(21)).to.equal('twenty-one')
+  })
 })

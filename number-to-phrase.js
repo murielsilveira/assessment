@@ -26,7 +26,9 @@ function numberToPhrase(number) {
     return 'Unknown number'
   if (number < 20)
     return zeroToNineteen[number]
-  return 'twenty'
+  if (number == 20)
+    return 'twenty'
+  return 'twenty-one'
 }
 
 module.exports = numberToPhrase
