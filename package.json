@@ -4,7 +4,8 @@
   "description": "Shows the english phrase of a given number",
   "main": "english-numbers.js",
   "scripts": {
-    "test": "mocha *.test.js"
+    "tests": "mocha *.test.js",
+    "tests-with-coverage": "istanbul cover _mocha -- -R spec *.test.js"
   },
   "keywords": [
     "english-numbers",
@@ -15,6 +16,7 @@
   "license": "ISC",
   "devDependencies": {
     "chai": "^3.5.0",
+    "istanbul": "^0.4.5",
     "mocha": "^3.1.2"
   }
 }
