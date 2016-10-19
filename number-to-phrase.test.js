@@ -39,11 +39,16 @@ describe('number to phrase tests', function(){
     expect(numberToPhrase(19)).to.equal('nineteen')
   })
 
-  it('20 should be: twenty', function(){
+  it('should parse numbers between 20 and 29', function(){
     expect(numberToPhrase(20)).to.equal('twenty')
-  })
-
-  it('21 should be: twenty-one', function(){
     expect(numberToPhrase(21)).to.equal('twenty-one')
+    expect(numberToPhrase(22)).to.equal('twenty-two')
+    expect(numberToPhrase(23)).to.equal('twenty-three')
+    expect(numberToPhrase(24)).to.equal('twenty-four')
+    expect(numberToPhrase(25)).to.equal('twenty-five')
+    expect(numberToPhrase(26)).to.equal('twenty-six')
+    expect(numberToPhrase(27)).to.equal('twenty-seven')
+    expect(numberToPhrase(28)).to.equal('twenty-eight')
+    expect(numberToPhrase(29)).to.equal('twenty-nine')
   })
 })
