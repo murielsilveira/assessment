@@ -54,20 +54,20 @@ function numberToPhrase(number) {
       phrase += ' and '
   }
 
-  if (number <= 19) {
-    if (phrase && number === 0)
-      return phrase
-    return phrase + (zeroToNine[number] || tenToNineteen[number])
+  if (number >= 20) {
+    const tenth = Math.floor(number / 10)
+    const tenthRest = number % 10
+
+    number = tenthRest
+
+    phrase += tens[tenth]
+    if (tenthRest > 0)
+      phrase += '-'
   }
 
-  const tenth = Math.floor(number / 10)
-  const tenthRest = number % 10
-
-  phrase += tens[tenth]
-  if (tenthRest > 0)
-    phrase += '-' + zeroToNine[tenthRest]
-
-  return phrase
+  if (phrase && number === 0)
+    return phrase
+  return phrase + (zeroToNine[number] || tenToNineteen[number])
 }
 
 module.exports = numberToPhrase
