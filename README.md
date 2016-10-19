@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/murielsilveira/assessment.svg?branch=muriel-silveira)](https://travis-ci.org/murielsilveira/assessment)
+
+---
 
 Javascript/Frontend Programmer - Excercise 1
 =============================
