@@ -1,4 +1,4 @@
-const decimals = {
+const zeroToNineteen = {
   0: 'zero',
   1: 'one',
   2: 'two',
@@ -8,15 +8,23 @@ const decimals = {
   6: 'six',
   7: 'seven',
   8: 'eight',
-  9: 'nine'
+  9: 'nine',
+  10: 'ten',
+  11: 'eleven',
+  12: 'twelve',
+  13: 'thirteen',
+  14: 'fourteen',
+  15: 'fifteen',
+  16: 'sixteen',
+  17: 'seventeen',
+  18: 'eighteen',
+  19: 'nineteen'
 }
 
 function numberToPhrase(number) {
   if (typeof(number) !== 'number')
     return 'Unknown number'
-  if (number > 9)
-    return 'ten'
-  return decimals[number]
+  return zeroToNineteen[number]
 }
 
 module.exports = numberToPhrase

@@ -16,7 +16,7 @@ describe('number to phrase tests', function(){
     expect(numberToPhrase(true)).to.equal('Unknown number')
   })
 
-  it('should parse decimals', function(){
+  it('should parse numbers between 0 and 19', function(){
     expect(numberToPhrase(0)).to.equal('zero')
     expect(numberToPhrase(1)).to.equal('one')
     expect(numberToPhrase(2)).to.equal('two')
@@ -27,9 +27,15 @@ describe('number to phrase tests', function(){
     expect(numberToPhrase(7)).to.equal('seven')
     expect(numberToPhrase(8)).to.equal('eight')
     expect(numberToPhrase(9)).to.equal('nine')
-  })
-
-  it('10 should be: ten', function(){
     expect(numberToPhrase(10)).to.equal('ten')
+    expect(numberToPhrase(11)).to.equal('eleven')
+    expect(numberToPhrase(12)).to.equal('twelve')
+    expect(numberToPhrase(13)).to.equal('thirteen')
+    expect(numberToPhrase(14)).to.equal('fourteen')
+    expect(numberToPhrase(15)).to.equal('fifteen')
+    expect(numberToPhrase(16)).to.equal('sixteen')
+    expect(numberToPhrase(17)).to.equal('seventeen')
+    expect(numberToPhrase(18)).to.equal('eighteen')
+    expect(numberToPhrase(19)).to.equal('nineteen')
   })
 })
