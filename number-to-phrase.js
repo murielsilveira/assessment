@@ -34,7 +34,9 @@ const tens = {
 }
 
 function numberToPhrase(number) {
-  if (typeof(number) !== 'number')
+  if (typeof(number) !== 'number'
+      || number !== Math.floor(number)
+      || number < 0)
     return 'Unknown number'
 
   if (number < 20)
