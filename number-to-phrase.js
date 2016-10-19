@@ -34,13 +34,18 @@ const tens = {
 }
 
 function numberToPhrase(number) {
-  if (typeof(number) !== 'number'
-      || number !== Math.floor(number)
-      || number < 0)
+  const isNotANumber = typeof(number) !== 'number'
+  const isFloat = number !== Math.floor(number)
+  const isNegative = number < 0
+
+  if (isNotANumber || isFloat || isNegative)
     return 'Unknown number'
 
-  if (number < 20)
-    return zeroToNine[number] || tenToNineteen[number]
+  if (number <= 9)
+    return zeroToNine[number]
+
+  if (number <= 19)
+    return tenToNineteen[number]
 
   const tenth = Math.floor(number / 10)
   const tenthRest = number % 10
