@@ -1,4 +1,5 @@
-[![Build Status](https://travis-ci.org/murielsilveira/assessment.svg?branch=muriel-silveira)](https://travis-ci.org/murielsilveira/assessment)
+[![Build Status](https://travis-ci.org/murielsilveira/assessment.svg?branch=muriel-silveira)](https://travis-ci.org/murielsilveira/assessment)[![codecov](https://codecov.io/gh/murielsilveira/assessment/branch/muriel-silveira/graph/badge.svg)](https://codecov.io/gh/murielsilveira/assessment)
+
 
 ---
 
