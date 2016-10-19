@@ -151,11 +151,15 @@ describe('number to phrase tests', function(){
     expect(numberToPhrase(99)).to.equal('ninety-nine')
   })
 
-  it('100 should be: one hundred', function(){
+  it('should parse: 100, 200, 300, 400, 500, 600, 700, 800, 900', function(){
     expect(numberToPhrase(100)).to.equal('one hundred')
-  })
-
-  it('200 should be: two hundred', function(){
     expect(numberToPhrase(200)).to.equal('two hundred')
+    expect(numberToPhrase(300)).to.equal('three hundred')
+    expect(numberToPhrase(400)).to.equal('four hundred')
+    expect(numberToPhrase(500)).to.equal('five hundred')
+    expect(numberToPhrase(600)).to.equal('six hundred')
+    expect(numberToPhrase(700)).to.equal('seven hundred')
+    expect(numberToPhrase(800)).to.equal('eight hundred')
+    expect(numberToPhrase(900)).to.equal('nine hundred')
   })
 })
