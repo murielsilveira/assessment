@@ -19,4 +19,8 @@ describe('number to phrase tests', function(){
   it('1 should be: one', function(){
     expect(numberToPhrase(1)).to.equal('one')
   })
+
+  it('2 should be: two', function(){
+    expect(numberToPhrase(2)).to.equal('two')
+  })
 })
