@@ -162,4 +162,8 @@ describe('number to phrase tests', function(){
     expect(numberToPhrase(800)).to.equal('eight hundred')
     expect(numberToPhrase(900)).to.equal('nine hundred')
   })
+
+  it('101 should be: one hundred and one', function(){
+    expect(numberToPhrase(101)).to.equal('one hundred and one')
+  })
 })

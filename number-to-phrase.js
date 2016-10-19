@@ -45,8 +45,13 @@ function numberToPhrase(number) {
 
   if (number >= 100) {
     const hundredth = Math.floor(number / 100)
+    const hundredthRest = number % 100
+
     phrase = zeroToNine[hundredth] + ' hundred'
-    number -= hundredth * 100
+    if (hundredthRest > 0)
+      phrase += ' and ' + zeroToNine[hundredthRest]
+
+    number -= hundredth * 100 + hundredthRest
   }
 
   if (number <= 19) {
