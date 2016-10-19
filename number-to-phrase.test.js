@@ -163,7 +163,15 @@ describe('number to phrase tests', function(){
     expect(numberToPhrase(900)).to.equal('nine hundred')
   })
 
-  it('101 should be: one hundred and one', function(){
+  it('should parse numbers between 101 and 999', function(){
     expect(numberToPhrase(101)).to.equal('one hundred and one')
+    expect(numberToPhrase(209)).to.equal('two hundred and nine')
+    expect(numberToPhrase(310)).to.equal('three hundred and ten')
+    expect(numberToPhrase(411)).to.equal('four hundred and eleven')
+    expect(numberToPhrase(515)).to.equal('five hundred and fifteen')
+    expect(numberToPhrase(619)).to.equal('six hundred and nineteen')
+    expect(numberToPhrase(720)).to.equal('seven hundred and twenty')
+    expect(numberToPhrase(855)).to.equal('eight hundred and fifty-five')
+    expect(numberToPhrase(999)).to.equal('nine hundred and ninety-nine')
   })
 })
