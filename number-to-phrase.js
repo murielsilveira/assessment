@@ -14,6 +14,8 @@ const decimals = {
 function numberToPhrase(number) {
   if (typeof(number) !== 'number')
     return 'Unknown number'
+  if (number > 9)
+    return 'ten'
   return decimals[number]
 }
 
