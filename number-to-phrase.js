@@ -22,15 +22,32 @@ const tenToNineteen = {
   18: 'eighteen',
   19: 'nineteen'
 }
+const tens = {
+  2: 'twenty',
+  3: 'thirty',
+  4: 'forty',
+  5: 'fifty',
+  6: 'sixty',
+  7: 'seventy',
+  8: 'eighty',
+  9: 'ninety'
+}
 
 function numberToPhrase(number) {
   if (typeof(number) !== 'number')
     return 'Unknown number'
+
   if (number < 20)
     return zeroToNine[number] || tenToNineteen[number]
-  if (number === 20)
-    return 'twenty'
-  return 'twenty-' + zeroToNine[number - 20]
+
+  const tenth = Math.floor(number / 10)
+  const tenthRest = number % 10
+
+  let phrase = tens[tenth]
+  if (tenthRest > 0)
+    phrase += '-' + zeroToNine[tenthRest]
+
+  return phrase
 }
 
 module.exports = numberToPhrase
