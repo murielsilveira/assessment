@@ -11,10 +11,10 @@ const decimals = {
   9: 'nine'
 }
 
-function numberToPhrase(numberToParse) {
-  if (typeof(numberToParse) !== 'number')
+function numberToPhrase(number) {
+  if (typeof(number) !== 'number')
     return 'Unknown number'
-  return decimals[numberToParse]
+  return decimals[number]
 }
 
 module.exports = numberToPhrase
