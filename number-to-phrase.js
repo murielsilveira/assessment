@@ -41,6 +41,17 @@ function numberToPhrase(number) {
 
   let phrase = ''
 
+  if (number >= 1000000000000) {
+    const trillionth = Math.floor(number / 1000000000000)
+    const trillionthRest = number % 1000000000000
+
+    number = trillionthRest
+    phrase += parseLessThanOneThousand(trillionth) + ' trillion'
+    if (number > 0) {
+      phrase += ' '
+    }
+  }
+
   if (number >= 1000000000) {
     const millionth = Math.floor(number / 1000000000)
     const millionthRest = number % 1000000000

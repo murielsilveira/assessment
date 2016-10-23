@@ -233,4 +233,11 @@ describe('number to phrase tests', function(){
     expect(numberToPhrase(500600000000)).to.equal('five hundred billion six hundred million')
     expect(numberToPhrase(999999999999)).to.equal('nine hundred and ninety-nine billion nine hundred and ninety-nine million nine hundred and ninety-nine thousand nine hundred and ninety-nine')
   })
+
+  it('should parse numbers between 1,000,000,000,000 and 999,999,999,999,999', function(){
+    expect(numberToPhrase(1000000000000)).to.equal('one trillion')
+    expect(numberToPhrase(20000000000000)).to.equal('twenty trillion')
+    expect(numberToPhrase(300000000000000)).to.equal('three hundred trillion')
+    expect(numberToPhrase(999999999999999)).to.equal('nine hundred and ninety-nine trillion nine hundred and ninety-nine billion nine hundred and ninety-nine million nine hundred and ninety-nine thousand nine hundred and ninety-nine')
+  })
 })
