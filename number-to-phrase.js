@@ -48,11 +48,11 @@ function numberToPhrase(number) {
     const hundredthRest = number % 100
 
     number = hundredthRest
-
-    phrase = zeroToNine[hundredth] + ' hundred'
-    if (hundredthRest > 0)
-      phrase += ' and '
+    phrase += zeroToNine[hundredth] + ' hundred'
   }
+
+  if (phrase && number > 0)
+    phrase += ' and '
 
   if (number >= 20) {
     const tenth = Math.floor(number / 10)
