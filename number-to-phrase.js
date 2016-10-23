@@ -41,6 +41,17 @@ function numberToPhrase(number) {
 
   let phrase = ''
 
+  if (number >= 1000000) {
+    const millionth = Math.floor(number / 1000000)
+    const millionthRest = number % 1000000
+
+    number = millionthRest
+    phrase += parseLessThanOneThousand(millionth) + ' million'
+    if (number > 0) {
+      phrase += ' '
+    }
+  }
+
   if (number >= 1000) {
     const thousandth = Math.floor(number / 1000)
     const thousandthRest = number % 1000

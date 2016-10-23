@@ -175,7 +175,7 @@ describe('number to phrase tests', function(){
     expect(numberToPhrase(999)).to.equal('nine hundred and ninety-nine')
   })
 
-  it('should parse numbers between 1000 and 9999', function(){
+  it('should parse numbers between 1,000 and 9,999', function(){
     expect(numberToPhrase(1000)).to.equal('one thousand')
     expect(numberToPhrase(2001)).to.equal('two thousand and one')
     expect(numberToPhrase(3010)).to.equal('three thousand and ten')
@@ -187,7 +187,7 @@ describe('number to phrase tests', function(){
     expect(numberToPhrase(9999)).to.equal('nine thousand nine hundred and ninety-nine')
   })
 
-  it('should parse numbers between 10000 and 99999', function(){
+  it('should parse numbers between 10,000 and 99,999', function(){
     expect(numberToPhrase(10000)).to.equal('ten thousand')
     expect(numberToPhrase(20001)).to.equal('twenty thousand and one')
     expect(numberToPhrase(31010)).to.equal('thirty-one thousand and ten')
@@ -199,7 +199,7 @@ describe('number to phrase tests', function(){
     expect(numberToPhrase(99999)).to.equal('ninety-nine thousand nine hundred and ninety-nine')
   })
 
-  it('should parse numbers between 100000 and 999999', function(){
+  it('should parse numbers between 100,000 and 999,999', function(){
     expect(numberToPhrase(100000)).to.equal('one hundred thousand')
     expect(numberToPhrase(200001)).to.equal('two hundred thousand and one')
     expect(numberToPhrase(310015)).to.equal('three hundred and ten thousand and fifteen')
@@ -209,5 +209,17 @@ describe('number to phrase tests', function(){
     expect(numberToPhrase(765432)).to.equal('seven hundred and sixty-five thousand four hundred and thirty-two')
     expect(numberToPhrase(888880)).to.equal('eight hundred and eighty-eight thousand eight hundred and eighty')
     expect(numberToPhrase(999999)).to.equal('nine hundred and ninety-nine thousand nine hundred and ninety-nine')
+  })
+
+  it('should parse numbers between 1,000,000 and 999,999,999', function(){
+    expect(numberToPhrase(1000000)).to.equal('one million')
+    expect(numberToPhrase(2000003)).to.equal('two million and three')
+    expect(numberToPhrase(3400050)).to.equal('three million four hundred thousand and fifty')
+    expect(numberToPhrase(45670800)).to.equal('forty-five million six hundred and seventy thousand eight hundred')
+    expect(numberToPhrase(500600777)).to.equal('five hundred million six hundred thousand seven hundred and seventy-seven')
+    expect(numberToPhrase(600000000)).to.equal('six hundred million')
+    expect(numberToPhrase(780000000)).to.equal('seven hundred and eighty million')
+    expect(numberToPhrase(800900101)).to.equal('eight hundred million nine hundred thousand one hundred and one')
+    expect(numberToPhrase(999999999)).to.equal('nine hundred and ninety-nine million nine hundred and ninety-nine thousand nine hundred and ninety-nine')
   })
 })
