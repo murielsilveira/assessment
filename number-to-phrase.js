@@ -1,4 +1,4 @@
-const zeroToNine = {
+const zeroToNineteen = {
   0: 'zero',
   1: 'one',
   2: 'two',
@@ -8,9 +8,7 @@ const zeroToNine = {
   6: 'six',
   7: 'seven',
   8: 'eight',
-  9: 'nine'
-}
-const tenToNineteen = {
+  9: 'nine',
   10: 'ten',
   11: 'eleven',
   12: 'twelve',
@@ -48,7 +46,7 @@ function numberToPhrase(number) {
     const thousandthRest = number % 1000
 
     number = thousandthRest
-    phrase += zeroToNine[thousandth] + ' thousand'
+    phrase += zeroToNineteen[thousandth] + ' thousand'
     if (number > 0) {
       phrase += ' '
     }
@@ -59,7 +57,7 @@ function numberToPhrase(number) {
     const hundredthRest = number % 100
 
     number = hundredthRest
-    phrase += zeroToNine[hundredth] + ' hundred'
+    phrase += zeroToNineteen[hundredth] + ' hundred'
     if (number > 0) {
       phrase += ' '
     }
@@ -73,15 +71,14 @@ function numberToPhrase(number) {
     const tenthRest = number % 10
 
     number = tenthRest
-
     phrase += tens[tenth]
-    if (tenthRest > 0)
+    if (number > 0)
       phrase += '-'
   }
 
   if (phrase && number === 0)
     return phrase
-  return phrase + (zeroToNine[number] || tenToNineteen[number])
+  return phrase + zeroToNineteen[number]
 }
 
 module.exports = numberToPhrase

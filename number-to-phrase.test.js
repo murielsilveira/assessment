@@ -186,4 +186,8 @@ describe('number to phrase tests', function(){
     expect(numberToPhrase(8755)).to.equal('eight thousand seven hundred and fifty-five')
     expect(numberToPhrase(9999)).to.equal('nine thousand nine hundred and ninety-nine')
   })
+
+  it('should parse 10000', function(){
+    expect(numberToPhrase(10000)).to.equal('ten thousand')
+  })
 })
