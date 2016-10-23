@@ -174,4 +174,16 @@ describe('number to phrase tests', function(){
     expect(numberToPhrase(855)).to.equal('eight hundred and fifty-five')
     expect(numberToPhrase(999)).to.equal('nine hundred and ninety-nine')
   })
+
+  it('should parse numbers between 1000 and 9999', function(){
+    expect(numberToPhrase(1000)).to.equal('one thousand')
+    expect(numberToPhrase(2001)).to.equal('two thousand and one')
+    expect(numberToPhrase(3010)).to.equal('three thousand and ten')
+    expect(numberToPhrase(4015)).to.equal('four thousand and fifteen')
+    expect(numberToPhrase(5021)).to.equal('five thousand and twenty-one')
+    expect(numberToPhrase(6500)).to.equal('six thousand five hundred')
+    expect(numberToPhrase(7610)).to.equal('seven thousand six hundred and ten')
+    expect(numberToPhrase(8755)).to.equal('eight thousand seven hundred and fifty-five')
+    expect(numberToPhrase(9999)).to.equal('nine thousand nine hundred and ninety-nine')
+  })
 })

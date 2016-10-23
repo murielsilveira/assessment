@@ -43,16 +43,30 @@ function numberToPhrase(number) {
 
   let phrase = ''
 
+  if (number >= 1000) {
+    const thousandth = Math.floor(number / 1000)
+    const thousandthRest = number % 1000
+
+    number = thousandthRest
+    phrase += zeroToNine[thousandth] + ' thousand'
+    if (number > 0) {
+      phrase += ' '
+    }
+  }
+
   if (number >= 100) {
     const hundredth = Math.floor(number / 100)
     const hundredthRest = number % 100
 
     number = hundredthRest
     phrase += zeroToNine[hundredth] + ' hundred'
+    if (number > 0) {
+      phrase += ' '
+    }
   }
 
   if (phrase && number > 0)
-    phrase += ' and '
+    phrase += 'and '
 
   if (number >= 20) {
     const tenth = Math.floor(number / 10)
