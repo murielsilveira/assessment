@@ -46,11 +46,18 @@ function numberToPhrase(number) {
     const thousandthRest = number % 1000
 
     number = thousandthRest
-    phrase += zeroToNineteen[thousandth] + ' thousand'
+    phrase += parseLessThanOneThousand(thousandth) + ' thousand'
     if (number > 0) {
       phrase += ' '
     }
   }
+
+  phrase += parseLessThanOneThousand(number, phrase)
+  return phrase
+}
+
+function parseLessThanOneThousand(number, currentPhrase) {
+  let phrase = ''
 
   if (number >= 100) {
     const hundredth = Math.floor(number / 100)
@@ -63,7 +70,7 @@ function numberToPhrase(number) {
     }
   }
 
-  if (phrase && number > 0)
+  if ((phrase || currentPhrase) && number > 0)
     phrase += 'and '
 
   if (number >= 20) {
@@ -76,7 +83,7 @@ function numberToPhrase(number) {
       phrase += '-'
   }
 
-  if (phrase && number === 0)
+  if ((phrase || currentPhrase) && number === 0)
     return phrase
   return phrase + zeroToNineteen[number]
 }

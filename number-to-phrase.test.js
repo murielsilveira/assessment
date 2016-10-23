@@ -187,7 +187,27 @@ describe('number to phrase tests', function(){
     expect(numberToPhrase(9999)).to.equal('nine thousand nine hundred and ninety-nine')
   })
 
-  it('should parse 10000', function(){
+  it('should parse numbers between 10000 and 99999', function(){
     expect(numberToPhrase(10000)).to.equal('ten thousand')
+    expect(numberToPhrase(20001)).to.equal('twenty thousand and one')
+    expect(numberToPhrase(31010)).to.equal('thirty-one thousand and ten')
+    expect(numberToPhrase(43056)).to.equal('forty-three thousand and fifty-six')
+    expect(numberToPhrase(55500)).to.equal('fifty-five thousand five hundred')
+    expect(numberToPhrase(67608)).to.equal('sixty-seven thousand six hundred and eight')
+    expect(numberToPhrase(70717)).to.equal('seventy thousand seven hundred and seventeen')
+    expect(numberToPhrase(88880)).to.equal('eighty-eight thousand eight hundred and eighty')
+    expect(numberToPhrase(99999)).to.equal('ninety-nine thousand nine hundred and ninety-nine')
+  })
+
+  it('should parse numbers between 100000 and 999999', function(){
+    expect(numberToPhrase(100000)).to.equal('one hundred thousand')
+    expect(numberToPhrase(200001)).to.equal('two hundred thousand and one')
+    expect(numberToPhrase(310015)).to.equal('three hundred and ten thousand and fifteen')
+    expect(numberToPhrase(456000)).to.equal('four hundred and fifty-six thousand')
+    expect(numberToPhrase(500400)).to.equal('five hundred thousand four hundred')
+    expect(numberToPhrase(640450)).to.equal('six hundred and forty thousand four hundred and fifty')
+    expect(numberToPhrase(765432)).to.equal('seven hundred and sixty-five thousand four hundred and thirty-two')
+    expect(numberToPhrase(888880)).to.equal('eight hundred and eighty-eight thousand eight hundred and eighty')
+    expect(numberToPhrase(999999)).to.equal('nine hundred and ninety-nine thousand nine hundred and ninety-nine')
   })
 })
