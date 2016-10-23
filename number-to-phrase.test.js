@@ -222,4 +222,15 @@ describe('number to phrase tests', function(){
     expect(numberToPhrase(800900101)).to.equal('eight hundred million nine hundred thousand one hundred and one')
     expect(numberToPhrase(999999999)).to.equal('nine hundred and ninety-nine million nine hundred and ninety-nine thousand nine hundred and ninety-nine')
   })
+
+  it('should parse numbers between 1,000,000,000 and 999,999,999,999', function(){
+    expect(numberToPhrase(1000000000)).to.equal('one billion')
+    expect(numberToPhrase(2000000001)).to.equal('two billion and one')
+    expect(numberToPhrase(10002000000)).to.equal('ten billion two million')
+    expect(numberToPhrase(21030004000)).to.equal('twenty-one billion thirty million four thousand')
+    expect(numberToPhrase(300000000000)).to.equal('three hundred billion')
+    expect(numberToPhrase(444000000123)).to.equal('four hundred and forty-four billion one hundred and twenty-three')
+    expect(numberToPhrase(500600000000)).to.equal('five hundred billion six hundred million')
+    expect(numberToPhrase(999999999999)).to.equal('nine hundred and ninety-nine billion nine hundred and ninety-nine million nine hundred and ninety-nine thousand nine hundred and ninety-nine')
+  })
 })
