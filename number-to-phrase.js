@@ -41,45 +41,38 @@ function numberToPhrase(number) {
 
   let phrase = ''
 
-  if (number >= 1000000000000) {
-    const trillionth = Math.floor(number / 1000000000000)
-    const trillionthRest = number % 1000000000000
-
-    number = trillionthRest
-    phrase += parseLessThanOneThousand(trillionth) + ' trillion'
-    if (number > 0) {
-      phrase += ' '
+  const largeNumbers = [
+    {
+      value: 1000000000000,
+      phrase: 'trillion'
+    },
+    {
+      value: 1000000000,
+      phrase: 'billion'
+    },
+    {
+      value: 1000000,
+      phrase: 'million'
+    },
+    {
+      value: 1000,
+      phrase: 'thousand'
     }
-  }
+  ]
 
-  if (number >= 1000000000) {
-    const millionth = Math.floor(number / 1000000000)
-    const millionthRest = number % 1000000000
+  for (var i = 0; i < largeNumbers.length; i++) {
+    const largeNumber = largeNumbers[i]
+    if (number < largeNumber.value)
+      continue
 
-    number = millionthRest
-    phrase += parseLessThanOneThousand(millionth) + ' billion'
-    if (number > 0) {
-      phrase += ' '
-    }
-  }
+    const largestMultiple = Math.floor(number / largeNumber.value)
+    const remaining = number % largeNumber.value
 
-  if (number >= 1000000) {
-    const millionth = Math.floor(number / 1000000)
-    const millionthRest = number % 1000000
+    number = remaining
+    phrase += parseLessThanOneThousand(largestMultiple)
+    phrase += ' '
+    phrase += largeNumber.phrase
 
-    number = millionthRest
-    phrase += parseLessThanOneThousand(millionth) + ' million'
-    if (number > 0) {
-      phrase += ' '
-    }
-  }
-
-  if (number >= 1000) {
-    const thousandth = Math.floor(number / 1000)
-    const thousandthRest = number % 1000
-
-    number = thousandthRest
-    phrase += parseLessThanOneThousand(thousandth) + ' thousand'
     if (number > 0) {
       phrase += ' '
     }
