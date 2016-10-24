@@ -121,4 +121,6 @@ function parseLessThanOneThousand(number, currentPhrase) {
   return phrase + zeroToNineteen[number]
 }
 
-module.exports = numberToPhrase
+if (typeof window === 'undefined') {
+  module.exports = numberToPhrase
+}
