@@ -1,5 +1,5 @@
 ;(function(exports){
-  const zeroToNineteen = {
+  var zeroToNineteen = {
     0: 'zero',
     1: 'one',
     2: 'two',
@@ -21,7 +21,7 @@
     18: 'eighteen',
     19: 'nineteen'
   }
-  const tens = {
+  var tens = {
     2: 'twenty',
     3: 'thirty',
     4: 'forty',
@@ -31,7 +31,7 @@
     8: 'eighty',
     9: 'ninety'
   }
-  const largeNumbersNotation = [
+  var largeNumbersNotation = [
     { value: 1000000000000, phrase: 'trillion' },
     { value: 1000000000, phrase: 'billion' },
     { value: 1000000, phrase: 'million' },
@@ -44,15 +44,15 @@
 
     number = parseInt(number)
 
-    let phrase = ''
+    var phrase = ''
 
     for (var i = 0; i < largeNumbersNotation.length; i++) {
-      const largeNumber = largeNumbersNotation[i]
+      var largeNumber = largeNumbersNotation[i]
       if (number < largeNumber.value)
         continue
 
-      const largestMultiple = Math.floor(number / largeNumber.value)
-      const remaining = number % largeNumber.value
+      var largestMultiple = Math.floor(number / largeNumber.value)
+      var remaining = number % largeNumber.value
 
       number = remaining
       phrase += parseLessThanOneThousand(largestMultiple)
@@ -69,20 +69,20 @@
   }
 
   function isInvalid(number) {
-    const asInt = parseInt(number)
-    const asFloat = parseFloat(number)
-    const isFloat = asInt !== asFloat
-    const isNegative = asInt < 0
+    var asInt = parseInt(number)
+    var asFloat = parseFloat(number)
+    var isFloat = asInt !== asFloat
+    var isNegative = asInt < 0
 
     return isFloat || isNegative
   }
 
   function parseLessThanOneThousand(number, currentPhrase) {
-    let phrase = ''
+    var phrase = ''
 
     if (number >= 100) {
-      const largestMultiple = Math.floor(number / 100)
-      const remaining = number % 100
+      var largestMultiple = Math.floor(number / 100)
+      var remaining = number % 100
 
       number = remaining
       phrase += zeroToNineteen[largestMultiple] + ' hundred'
@@ -95,8 +95,8 @@
       phrase += 'and '
 
     if (number >= 20) {
-      const largestMultiple = Math.floor(number / 10)
-      const remaining = number % 10
+      var largestMultiple = Math.floor(number / 10)
+      var remaining = number % 10
 
       number = remaining
       phrase += tens[largestMultiple]
