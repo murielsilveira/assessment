@@ -32,12 +32,10 @@ const tens = {
 }
 
 function numberToPhrase(number) {
-  const isNotANumber = typeof(number) !== 'number'
-  const isFloat = number !== Math.floor(number)
-  const isNegative = number < 0
-
-  if (isNotANumber || isFloat || isNegative)
+  if (isInvalid(number))
     return 'Unknown number'
+
+  number = parseInt(number)
 
   let phrase = ''
 
@@ -80,6 +78,15 @@ function numberToPhrase(number) {
 
   phrase += parseLessThanOneThousand(number, phrase)
   return phrase
+}
+
+function isInvalid(number) {
+  const asInt = parseInt(number)
+  const asFloat = parseFloat(number)
+  const isFloat = asInt !== asFloat
+  const isNegative = asInt < 0
+
+  return isFloat || isNegative
 }
 
 function parseLessThanOneThousand(number, currentPhrase) {

@@ -18,10 +18,18 @@ describe('number to phrase tests', function(){
 
   it('should not parse float numbers', function(){
     expect(numberToPhrase(1.1)).to.equal('Unknown number')
+    expect(numberToPhrase('1.1')).to.equal('Unknown number')
+    expect(numberToPhrase('-1.1')).to.equal('Unknown number')
   })
 
   it('should not parse negative numbers', function(){
     expect(numberToPhrase(-10)).to.equal('Unknown number')
+    expect(numberToPhrase('-10')).to.equal('Unknown number')
+  })
+
+  it('should parse number as string', function(){
+    expect(numberToPhrase('10')).to.equal('ten')
+    expect(numberToPhrase('100.00')).to.equal('one hundred')
   })
 
   it('should parse numbers between 0 and 19', function(){
