@@ -1,8 +1,8 @@
 {
-  "name": "english-numbers",
+  "name": "number-to-phrase",
   "version": "1.0.0",
   "description": "Shows the english phrase of a given number",
-  "main": "english-numbers.js",
+  "main": "number-to-phrase.js",
   "scripts": {
     "tests": "mocha *.test.js",
     "tests-with-coverage": "istanbul cover _mocha -- -R spec *.test.js"
