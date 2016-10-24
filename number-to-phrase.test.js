@@ -3,28 +3,28 @@ const numberToPhrase = require('./number-to-phrase').numberToPhrase
 
 describe('when converting a number to a phrase', function(){
   it('should not parse non numbers', function(){
-    expect(numberToPhrase('A')).to.equal('Unknown number')
-    expect(numberToPhrase(',')).to.equal('Unknown number')
-    expect(numberToPhrase('√')).to.equal('Unknown number')
-    expect(numberToPhrase('')).to.equal('Unknown number')
-    expect(numberToPhrase({})).to.equal('Unknown number')
-    expect(numberToPhrase([])).to.equal('Unknown number')
-    expect(numberToPhrase(function(){})).to.equal('Unknown number')
-    expect(numberToPhrase(undefined)).to.equal('Unknown number')
-    expect(numberToPhrase(null)).to.equal('Unknown number')
-    expect(numberToPhrase(false)).to.equal('Unknown number')
-    expect(numberToPhrase(true)).to.equal('Unknown number')
+    expect(numberToPhrase('A')).to.equal('unknown number')
+    expect(numberToPhrase(',')).to.equal('unknown number')
+    expect(numberToPhrase('√')).to.equal('unknown number')
+    expect(numberToPhrase('')).to.equal('unknown number')
+    expect(numberToPhrase({})).to.equal('unknown number')
+    expect(numberToPhrase([])).to.equal('unknown number')
+    expect(numberToPhrase(function(){})).to.equal('unknown number')
+    expect(numberToPhrase(undefined)).to.equal('unknown number')
+    expect(numberToPhrase(null)).to.equal('unknown number')
+    expect(numberToPhrase(false)).to.equal('unknown number')
+    expect(numberToPhrase(true)).to.equal('unknown number')
   })
 
   it('should not parse float numbers', function(){
-    expect(numberToPhrase(1.1)).to.equal('Unknown number')
-    expect(numberToPhrase('1.1')).to.equal('Unknown number')
-    expect(numberToPhrase('-1.1')).to.equal('Unknown number')
+    expect(numberToPhrase(1.1)).to.equal('unknown number')
+    expect(numberToPhrase('1.1')).to.equal('unknown number')
+    expect(numberToPhrase('-1.1')).to.equal('unknown number')
   })
 
   it('should not parse negative numbers', function(){
-    expect(numberToPhrase(-10)).to.equal('Unknown number')
-    expect(numberToPhrase('-10')).to.equal('Unknown number')
+    expect(numberToPhrase(-10)).to.equal('unknown number')
+    expect(numberToPhrase('-10')).to.equal('unknown number')
   })
 
   it('should parse numbers as string', function(){

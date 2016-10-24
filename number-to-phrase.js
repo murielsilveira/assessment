@@ -40,7 +40,7 @@
 
   function numberToPhrase(number) {
     if (isInvalid(number))
-      return 'Unknown number'
+      return 'unknown number'
 
     number = parseInt(number)
 
