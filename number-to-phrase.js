@@ -32,22 +32,10 @@
     9: 'ninety'
   }
   const largeNumbersNotation = [
-    {
-      value: 1000000000000,
-      phrase: 'trillion'
-    },
-    {
-      value: 1000000000,
-      phrase: 'billion'
-    },
-    {
-      value: 1000000,
-      phrase: 'million'
-    },
-    {
-      value: 1000,
-      phrase: 'thousand'
-    }
+    { value: 1000000000000, phrase: 'trillion' },
+    { value: 1000000000, phrase: 'billion' },
+    { value: 1000000, phrase: 'million' },
+    { value: 1000, phrase: 'thousand' }
   ]
 
   function numberToPhrase(number) {
