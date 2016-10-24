@@ -93,11 +93,11 @@
     let phrase = ''
 
     if (number >= 100) {
-      const hundredth = Math.floor(number / 100)
-      const hundredthRest = number % 100
+      const largestMultiple = Math.floor(number / 100)
+      const remaining = number % 100
 
-      number = hundredthRest
-      phrase += zeroToNineteen[hundredth] + ' hundred'
+      number = remaining
+      phrase += zeroToNineteen[largestMultiple] + ' hundred'
       if (number > 0) {
         phrase += ' '
       }
@@ -107,11 +107,11 @@
       phrase += 'and '
 
     if (number >= 20) {
-      const tenth = Math.floor(number / 10)
-      const tenthRest = number % 10
+      const largestMultiple = Math.floor(number / 10)
+      const remaining = number % 10
 
-      number = tenthRest
-      phrase += tens[tenth]
+      number = remaining
+      phrase += tens[largestMultiple]
       if (number > 0)
         phrase += '-'
     }
