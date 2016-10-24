@@ -1,5 +1,5 @@
 const expect = require('chai').expect
-const numberToPhrase = require('./number-to-phrase')
+const numberToPhrase = require('./number-to-phrase').numberToPhrase
 
 describe('number to phrase tests', function(){
   it('should not parse non numbers', function(){
