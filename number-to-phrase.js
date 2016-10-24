@@ -31,6 +31,24 @@
     8: 'eighty',
     9: 'ninety'
   }
+  const largeNumbersNotation = [
+    {
+      value: 1000000000000,
+      phrase: 'trillion'
+    },
+    {
+      value: 1000000000,
+      phrase: 'billion'
+    },
+    {
+      value: 1000000,
+      phrase: 'million'
+    },
+    {
+      value: 1000,
+      phrase: 'thousand'
+    }
+  ]
 
   function numberToPhrase(number) {
     if (isInvalid(number))
@@ -40,27 +58,8 @@
 
     let phrase = ''
 
-    const largeNumbers = [
-      {
-        value: 1000000000000,
-        phrase: 'trillion'
-      },
-      {
-        value: 1000000000,
-        phrase: 'billion'
-      },
-      {
-        value: 1000000,
-        phrase: 'million'
-      },
-      {
-        value: 1000,
-        phrase: 'thousand'
-      }
-    ]
-
-    for (var i = 0; i < largeNumbers.length; i++) {
-      const largeNumber = largeNumbers[i]
+    for (var i = 0; i < largeNumbersNotation.length; i++) {
+      const largeNumber = largeNumbersNotation[i]
       if (number < largeNumber.value)
         continue
 
