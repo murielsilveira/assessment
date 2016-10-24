@@ -1,7 +1,7 @@
 const expect = require('chai').expect
 const numberToPhrase = require('./number-to-phrase').numberToPhrase
 
-describe('number to phrase tests', function(){
+describe('when converting a number to a phrase', function(){
   it('should not parse non numbers', function(){
     expect(numberToPhrase('A')).to.equal('Unknown number')
     expect(numberToPhrase(',')).to.equal('Unknown number')
@@ -27,7 +27,7 @@ describe('number to phrase tests', function(){
     expect(numberToPhrase('-10')).to.equal('Unknown number')
   })
 
-  it('should parse number as string', function(){
+  it('should parse numbers as string', function(){
     expect(numberToPhrase('10')).to.equal('ten')
     expect(numberToPhrase('100.00')).to.equal('one hundred')
   })
@@ -159,7 +159,7 @@ describe('number to phrase tests', function(){
     expect(numberToPhrase(99)).to.equal('ninety-nine')
   })
 
-  it('should parse: 100, 200, 300, 400, 500, 600, 700, 800, 900', function(){
+  it('should parse numbers between 100 and 999', function(){
     expect(numberToPhrase(100)).to.equal('one hundred')
     expect(numberToPhrase(200)).to.equal('two hundred')
     expect(numberToPhrase(300)).to.equal('three hundred')
@@ -169,9 +169,6 @@ describe('number to phrase tests', function(){
     expect(numberToPhrase(700)).to.equal('seven hundred')
     expect(numberToPhrase(800)).to.equal('eight hundred')
     expect(numberToPhrase(900)).to.equal('nine hundred')
-  })
-
-  it('should parse numbers between 101 and 999', function(){
     expect(numberToPhrase(101)).to.equal('one hundred and one')
     expect(numberToPhrase(209)).to.equal('two hundred and nine')
     expect(numberToPhrase(310)).to.equal('three hundred and ten')
