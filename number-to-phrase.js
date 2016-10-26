@@ -44,7 +44,13 @@
 
     number = parseInt(number)
 
+    var numberIsNegative = false
     var phrase = ''
+
+    if (number < 0) {
+      numberIsNegative = true
+      number = Math.abs(number)
+    }
 
     for (var i = 0; i < largeNumbersNotation.length; i++) {
       var largeNumber = largeNumbersNotation[i]
@@ -65,16 +71,14 @@
     }
 
     phrase += parseLessThanOneThousand(number, phrase)
+    if (numberIsNegative)
+      return 'minus ' + phrase
     return phrase
   }
 
   function isInvalid(number) {
-    var asInt = parseInt(number)
-    var asFloat = parseFloat(number)
-    var isFloat = asInt !== asFloat
-    var isNegative = asInt < 0
-
-    return isFloat || isNegative
+    var isFloat = parseInt(number) !== parseFloat(number)
+    return isFloat
   }
 
   function parseLessThanOneThousand(number, currentPhrase) {

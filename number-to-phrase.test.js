@@ -22,9 +22,9 @@ describe('when converting a number to a phrase', function(){
     expect(numberToPhrase('-1.1')).to.equal('unknown number')
   })
 
-  it('should not parse negative numbers', function(){
-    expect(numberToPhrase(-10)).to.equal('unknown number')
-    expect(numberToPhrase('-10')).to.equal('unknown number')
+  it('should parse negative numbers', function(){
+    expect(numberToPhrase(-10)).to.equal('minus ten')
+    expect(numberToPhrase('-9000')).to.equal('minus nine thousand')
   })
 
   it('should parse numbers as string', function(){
