@@ -1,6 +1,21 @@
 [![Build Status](https://travis-ci.org/murielsilveira/assessment.svg?branch=muriel-silveira)](https://travis-ci.org/murielsilveira/assessment) [![codecov](https://codecov.io/gh/murielsilveira/assessment/branch/muriel-silveira/graph/badge.svg)](https://codecov.io/gh/murielsilveira/assessment)
 
 
+### Getting started
+
+#### Running the project
+
+You can just open the `index.html` file on your browser or serve the root folder with some library or a simple python server: `python -m SimpleHTTPServer 5000`.
+
+#### Running the tests
+
+To run the tests you will need Node and npm installed.
+
+```bash
+npm install
+npm run tests
+```
+
 ---
 
 Javascript/Frontend Programmer - Excercise 1
