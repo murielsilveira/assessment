@@ -37,15 +37,19 @@
     { value: 1000000, phrase: 'million' },
     { value: 1000, phrase: 'thousand' }
   ]
+  var largestNumberSupported = 999999999999999
 
   function numberToPhrase(number) {
     if (isInvalid(number))
       return 'unknown number'
 
     number = parseInt(number)
-
     var numberIsNegative = false
     var phrase = ''
+
+    if (number > largestNumberSupported) {
+      return "oh, that's a big number, I don't know it yet!"
+    }
 
     if (number < 0) {
       numberIsNegative = true

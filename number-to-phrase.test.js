@@ -245,4 +245,8 @@ describe('when converting a number to a phrase', function(){
     expect(numberToPhrase(300000000000000)).to.equal('three hundred trillion')
     expect(numberToPhrase(999999999999999)).to.equal('nine hundred and ninety-nine trillion nine hundred and ninety-nine billion nine hundred and ninety-nine million nine hundred and ninety-nine thousand nine hundred and ninety-nine')
   })
+
+  it('should give a friendly message for numbers larger than the supported', function(){
+    expect(numberToPhrase(1000000000000000)).to.equal("oh, that's a big number, I don't know it yet!")
+  })
 })
