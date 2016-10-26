@@ -3,9 +3,9 @@
 <head lang="en">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="An app that gets a number as input and shows it as a phrase">
+  <meta name="description" content="An app that gets a number as input and shows it as a phrase. It also says the number if your browser support the Web Speech API.">
   <meta name="author" content="Muriel Silveira Pereira">
-  <title>Number to phrase</title>
+  <title>I know how to say numbers</title>
   <style>
     * {
       box-sizing: border-box;
@@ -78,12 +78,30 @@
       font-size: 1.7em;
     }
 
+    .mute {
+      color: #565e6d;
+      text-decoration: none;
+      margin-top: 10px;
+      font-size: 1.2em;
+      display: none;
+    }
+
+    .mute.speech-active {
+      display: inline-block;
+    }
+
+    .muted {
+      color: #867a7a;
+      text-decoration: line-through;
+    }
+
     @media (max-width: 400px) {
       .header {
         padding-top: 2vh;
       }
 
       .phrase {
+        margin-top: 20px;
         font-size: 1.4em;
       }
     }
@@ -99,6 +117,7 @@
       <input type="number" class="number" placeholder="Type a number" required>
       <input type="submit" class="submit" value="Say Number">
     </form>
+    <a href="#" class="mute">&#9834;</a>
     <h2 class="phrase"></h2>
   </section>
 
@@ -107,14 +126,44 @@
     var form = document.querySelector('.form')
     var number = document.querySelector('.number')
     var phrase = document.querySelector('.phrase')
+    var mute = document.querySelector('.mute')
+
+    var isSpeechActive = false
+    if (window.speechSynthesis) {
+      isSpeechActive = true
+      mute.classList.add('speech-active')
+    }
 
     form.addEventListener('submit', onSubmitForm)
+    mute.addEventListener('click', onMuteClicked)
     number.focus()
 
     function onSubmitForm(event){
-      phrase.innerHTML = numberToPhrase(number.value)
+      var numberAsPhrase = numberToPhrase(number.value)
+      phrase.innerHTML = numberAsPhrase
+
+      if (isSpeechActive) {
+        speechSynthesis.cancel()
+        speechSynthesis.speak(
+          new SpeechSynthesisUtterance(numberAsPhrase)
+        )
+      }
+
       event.preventDefault()
       return false
+    }
+
+    function onMuteClicked(event) {
+      if (mute.classList.contains('muted')) {
+        mute.classList.remove('muted')
+        isSpeechActive = true
+      } else {
+        mute.classList.add('muted')
+        isSpeechActive = false
+        speechSynthesis.cancel()
+      }
+
+      event.preventDefault()
     }
   </script>
 </body>

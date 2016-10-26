@@ -48,7 +48,7 @@
     var phrase = ''
 
     if (number > largestNumberSupported) {
-      return "oh, that's a big number, I don't know to say it yet!"
+      return "oh, that's a big number"
     }
 
     if (number < 0) {
