@@ -247,6 +247,6 @@ describe('when converting a number to a phrase', function(){
   })
 
   it('should give a friendly message for numbers larger than the supported', function(){
-    expect(numberToPhrase(1000000000000000)).to.equal("oh, that's a big number, I don't know it yet!")
+    expect(numberToPhrase(1000000000000000)).to.equal("oh, that's a big number, I don't know to say it yet!")
   })
 })
