@@ -3,10 +3,6 @@
 
 ### Getting started
 
-#### Running the project
-
-You can just open the `index.html` file on your browser or serve the root folder with some library or a simple python server: `python -m SimpleHTTPServer 5000`.
-
 #### Running the tests
 
 To run the tests you will need Node and npm installed.
@@ -15,6 +11,11 @@ To run the tests you will need Node and npm installed.
 npm install
 npm run tests
 ```
+
+#### Running the project
+
+You can just open the `index.html` file on your browser or use the command `npm run dev` to try the offline support with Service Worker.
+
 
 ---
 
