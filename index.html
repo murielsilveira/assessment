@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="utf-8">
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An app that gets a number as input and shows it as a phrase. It also says the number if your browser support the Web Speech API.">
+  <meta name="author" content="Muriel Silveira Pereira">
+  <meta name='theme-color' content='#2f3238'>
+  <link rel='manifest' href='./manifest.json'>
+  <link rel="icon" href="./icon-dark.png">
+  <title>I know how to say numbers</title>
+  <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+  <header class="header">
+    <h1 class="headline">I know how to say numbers</h1>
+    <p class="call-to-action">Try it out:</p>
+  </header>
+  <section class="content">
+    <form class="form">
+      <input type="number" class="number" placeholder="Type a number" required>
+      <input type="submit" class="submit" value="Say Number">
+    </form>
+    <a href="#" class="mute">&#9834;</a>
+    <h2 class="phrase"></h2>
+  </section>
+
+  <script defer src="./number-to-phrase.js"></script>
+  <script defer src="./main.js"></script>
+  <script>
+    if (navigator.serviceWorker) {
+      navigator.serviceWorker.register('./service-worker.js', { scope: '/assessment/' })
+        .then(function(){
+          console.log('Service Worker Installed')
+        })
+    }
+  </script>
+</body>
+</html>

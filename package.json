@@ -1,0 +1,24 @@
+{
+  "name": "number-to-phrase",
+  "version": "1.0.0",
+  "description": "Shows the english phrase of a given number",
+  "main": "number-to-phrase.js",
+  "scripts": {
+    "tests": "mocha *.test.js",
+    "tests-with-coverage": "istanbul cover _mocha -- -R spec *.test.js",
+    "dev": "http-server .."
+  },
+  "keywords": [
+    "english-numbers",
+    "numbers",
+    "english"
+  ],
+  "author": "Muriel Silveira <murielkong@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "http-server": "^0.9.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.1.2"
+  }
+}

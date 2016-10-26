@@ -1,0 +1,13 @@
+{
+  "name": "I Say Numbers",
+  "icons": [{
+    "src": "./icon-dark.png",
+    "type": "image/png",
+    "sizes": "192x192"
+  }],
+  "background_color": "#f1f4f9",
+  "theme_color": "#2f3238",
+  "start_url": "/?homescreen=1",
+  "display": "standalone",
+  "orientation": "portrait"
+}
