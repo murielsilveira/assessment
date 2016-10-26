@@ -10,106 +10,7 @@
   <link rel='manifest' href='./manifest.json'>
   <link rel="icon" href="./icon-dark.png">
   <title>I know how to say numbers</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    html, body {
-      padding: 0;
-      margin: 0;
-      width: 100%;
-      font-family: Arial, sans-serif;
-      background: #f1f4f9;
-    	color: #2f3238;
-      text-align: center;
-    }
-
-    .header {
-      padding: 5vh 5vw 0 5vw;
-    }
-
-    .headline {
-      font-size: 2em;
-    }
-
-    .call-to-action {
-      font-size: 1em;
-    }
-
-    .content {
-      padding: 5vh 5vw 10vh 5vw;
-    }
-
-    .form {
-      width: 100%;
-      max-width: 300px;
-      margin: 0 auto;
-    }
-
-    .number {
-      display: block;
-      width: 100%;
-      padding: 10px;
-      font-size: 1.1em;
-      color: #2f3238;
-    }
-
-    .submit {
-      display: block;
-      width: 100%;
-      height: 36px;
-      padding: 0 16px;
-      margin-top: 40px;
-      border: none;
-      border-radius: 2px;
-      font-size: 0.8em;
-      font-weight: 500;
-      background: #6c7382;
-      color: #fff;
-      cursor: pointer;
-      text-transform: uppercase;
-      vertical-align: middle;
-    }
-
-    .submit:hover,
-    .submit:focus {
-      background: #565e6d;
-    }
-
-    .phrase {
-      margin-top: 50px;
-      font-size: 1.7em;
-    }
-
-    .mute {
-      color: #565e6d;
-      text-decoration: none;
-      margin-top: 10px;
-      font-size: 1.2em;
-      display: none;
-    }
-
-    .mute.speech-active {
-      display: inline-block;
-    }
-
-    .muted {
-      color: #867a7a;
-      text-decoration: line-through;
-    }
-
-    @media (max-width: 400px) {
-      .header {
-        padding-top: 2vh;
-      }
-
-      .phrase {
-        margin-top: 20px;
-        font-size: 1.4em;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="./main.css">
 </head>
 <body>
   <header class="header">
@@ -125,51 +26,9 @@
     <h2 class="phrase"></h2>
   </section>
 
-  <script src="./number-to-phrase.js"></script>
+  <script defer src="./number-to-phrase.js"></script>
+  <script defer src="./main.js"></script>
   <script>
-    var form = document.querySelector('.form')
-    var number = document.querySelector('.number')
-    var phrase = document.querySelector('.phrase')
-    var mute = document.querySelector('.mute')
-
-    var isSpeechActive = false
-    if (window.speechSynthesis) {
-      isSpeechActive = true
-      mute.classList.add('speech-active')
-    }
-
-    form.addEventListener('submit', onSubmitForm)
-    mute.addEventListener('click', onMuteClicked)
-    number.focus()
-
-    function onSubmitForm(event){
-      var numberAsPhrase = numberToPhrase(number.value)
-      phrase.innerHTML = numberAsPhrase
-
-      if (isSpeechActive) {
-        speechSynthesis.cancel()
-        speechSynthesis.speak(
-          new SpeechSynthesisUtterance(numberAsPhrase)
-        )
-      }
-
-      event.preventDefault()
-      return false
-    }
-
-    function onMuteClicked(event) {
-      if (mute.classList.contains('muted')) {
-        mute.classList.remove('muted')
-        isSpeechActive = true
-      } else {
-        mute.classList.add('muted')
-        isSpeechActive = false
-        speechSynthesis.cancel()
-      }
-
-      event.preventDefault()
-    }
-
     if (navigator.serviceWorker) {
       navigator.serviceWorker.register('./service-worker.js', { scope: '/assessment/' })
         .then(function(){
