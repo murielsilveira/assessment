@@ -14,7 +14,13 @@ npm run tests
 
 #### Running the project
 
-You can just open the `index.html` file on your browser or use the command `npm run dev` to try the offline support with Service Worker.
+You can just open the `index.html` file on your browser or use the command
+
+```
+npm run dev
+```
+
+and access http://127.0.0.1:8080/assessment/ to try the offline support with Service Worker.
 
 
 ---
