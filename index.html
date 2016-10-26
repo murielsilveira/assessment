@@ -169,6 +169,13 @@
 
       event.preventDefault()
     }
+
+    if (navigator.serviceWorker) {
+      navigator.serviceWorker.register('./service-worker.js', { scope: '/assessment/' })
+        .then(function(){
+          console.log('Service Worker Installed')
+        })
+    }
   </script>
 </body>
 </html>
