@@ -19,8 +19,20 @@
       text-align: center;
     }
 
-    .container {
-      padding: 10vh 5vw;
+    .header {
+      padding: 5vh 5vw 0 5vw;
+    }
+
+    .headline {
+      font-size: 2em;
+    }
+
+    .call-to-action {
+      font-size: 1em;
+    }
+
+    .content {
+      padding: 5vh 5vw 10vh 5vw;
     }
 
     .form {
@@ -65,6 +77,10 @@
     }
 
     @media (max-width: 400px) {
+      .header {
+        padding-top: 2vh;
+      }
+
       .phrase {
         font-size: 1.4em;
       }
@@ -72,10 +88,14 @@
   </style>
 </head>
 <body>
-  <section class="container">
+  <header class="header">
+    <h1 class="headline">I know how to say numbers</h1>
+    <p class="call-to-action">Try it out:</p>
+  </header>
+  <section class="content">
     <form class="form">
       <input type="number" class="number" placeholder="Type a number" required>
-      <input type="submit" class="submit" value="Parse Number">
+      <input type="submit" class="submit" value="Say Number">
     </form>
     <h2 class="phrase"></h2>
   </section>
